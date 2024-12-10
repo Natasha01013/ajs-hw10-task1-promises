@@ -8,9 +8,5 @@ export default class GameSavingLoader {
         .then(data => json(data)) // json преобразует ArrayBuffer в строку
         .then(dataStr => JSON.parse(dataStr)) // преобразуем строку в объект
         .then(parseData => new GameSaving(parseData)) // создаём объект GameSaving
-        .catch(error => {
-            console.error('Ошибка при загрузке', error);
-            throw error;
-        });
     }
-  }
+}
